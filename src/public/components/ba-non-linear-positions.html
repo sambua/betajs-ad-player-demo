@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-check" >
+            <input class="check-roll-position"
+                   type="checkbox" name="pre"
+                   id="pre-checkbox" value="{{=preRollCheck}}"
+            >
+            <label class="form-check-label" for="pre-checkbox">
+                <strong>PRE Roll</strong>
+            </label>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-check" >
+            <input class="check-roll-position"
+                   type="checkbox" name="post"
+                   id="post-checkbox" value="{{=postRollCheck}}"
+            >
+            <label class="form-check-label" for="post-checkbox">
+                <strong>POST Roll</strong>
+            </label>
+        </div>
+    </div>
+
+    <div class="col-sm-12">
+        <div class="form-check" >
+            <input class="check-roll-position"
+                   type="checkbox" name="mid"
+                   id="midroll-checkbox" value="{{=midRollCheck}}"
+            >
+            <label class="form-check-label" for="midroll-checkbox">
+                <strong>Midroll Roll</strong>
+            </label>
+        </div>
+    </div>
+
+    <div ba-if="{{!!midRollCheck}}" class="form-group row">
+        <label for="midOptions" class="col-sm-2 col-form-label">Email</label>
+        <div class="col-sm-10">
+            <input type="text"
+                   class="form-control" id="midOptions"
+                   value="{{=midOptions}}"
+            >
+            <small id="passwordHelpInline" class="text-muted">
+                Values could be seconds as integer or, with percentage (example: 35%)
+                all comma separated
+            </small>
+        </div>
+    </div>
+</div>
+

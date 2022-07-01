@@ -8,5 +8,12 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="bootstrap" level="application" />
+    <orderEntry type="library" name="betajs-shims" level="application" />
+    <orderEntry type="library" name="scoped" level="application" />
+    <orderEntry type="library" name="betajs-browser-noscoped" level="application" />
+    <orderEntry type="library" name="beta-noscoped" level="application" />
+    <orderEntry type="library" name="betajs-media-noscoped" level="application" />
+    <orderEntry type="library" name="betajs-dynamics-noscoped" level="application" />
   </component>
 </module>

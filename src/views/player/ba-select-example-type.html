@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-sm-12">
+        <div class="form-check">
+            <input class="example-radio-types"
+                   type="radio" name="exampleRadios"
+                   id="localExampleRadio" value="local-examples" checked
+                   ba-on:change="{{on_example_type_changed()}}"
+            >
+            <label class="form-check-label" for="localExampleRadio">
+                Local Examples
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="example-radio-types"
+                   type="radio" name="exampleRadios"
+                   id="dcExampleRadio" value="local-examples"
+                   ba-on:change="{{on_example_type_changed()}}"
+            >
+            <label class="form-check-label" for="dcExampleRadio">
+                DoubleClick Examples
+            </label>
+        </div>
+        <div class="form-check">
+            <input class="example-radio-types"
+                   type="radio" name="exampleRadios"
+                   id="customExampleRadio" value="local-examples"
+                   ba-on:change="{{on_example_type_changed()}}"
+            >
+            <label class="form-check-label" for="customExampleRadio">
+                Custom XML File Examples
+            </label>
+        </div>
+    </div>
+</div>
+
