@@ -155,6 +155,16 @@ if (playerDemoContainer && window.__localData) {
                 });
 
                 this._adPlayer.activate();
+
+                // ad-loaded, ad-adProgress, ad-impression, ad-complete
+                BetaJS.Objs.iter(imaEvents, (_type) => {
+                    this._adPlayer.on(_type, () => {
+                        const pElement = document.createElement('p');
+                        const textNode = document.createTextNode(`Event dispatched: ${_type}`);
+                        pElement.append(textNode);
+                        eventLogger.append(pElement);
+                    }, this);
+                }, this);
             },
 
             close_notification: function (ev) {

@@ -20,7 +20,6 @@
                           onclick="{{close_notification(domEvent)}}"
                     >&times;</span>
                 </button>
-
             </div>
         </div>
     </div>
@@ -72,7 +71,7 @@
         </div>
     </div>
 
-    <div ba-if="{{xmlView}}" class="form-group">
+    <div ba-if="{{xmlView.length > 0}}" class="form-group">
         <label for="exampleFormControlTextarea1">XML Preview</label>
         <textarea readonly disabled
                 class="form-control" id="exampleFormControlTextarea1" rows="3"
@@ -85,16 +84,15 @@
     <div class="row" ba-if="{{!playerVisible}}">
         <div class="col-sm-12 col-md-6">
             <ba-linear-positions
-                    ba-event:change="linear_settings_changed"
+                ba-event:change="linear_settings_changed"
             ></ba-linear-positions>
         </div>
         <div class="col-sm-12 col-md-6">
             <ba-non-linear-positions
-                    ba-event:change="non_linear_settings_changed"
+                ba-event:change="non_linear_settings_changed"
             ></ba-non-linear-positions>
         </div>
     </div>
-
 
     <div class="row">
         <div class="col-sm-6">
@@ -105,11 +103,16 @@
         </div>
     </div>
 
-
     <hr/>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col-sm-12 col-md-6">
+            <h3>Events: </h3>
+            <div id="events-block" style="height: 280px; overflow: scroll">
+                <code id="events-logger"></code>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
             <h3>Tracking: </h3>
             <p>As we're not store user ID, here you can see other events as well related to another user</p>
             <div id="tracks-block" style="height: 230px; overflow: scroll">

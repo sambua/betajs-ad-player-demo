@@ -85,19 +85,19 @@ module.exports = {
     }
   ],
   imaEvents: [
-    'adimpression',
-    'adloaded',
-    'adfinished',
-    'adstart',
-    'adfirstQuartile',
-    'admidpoint',
-    'adthirdQuartile',
-    'adallAdsCompleted',
-    'adpause',
-    'adclick',
-    'advideoClicked',
-    'adadProgress',
-    'addurationChange',
-    'adskipped'
+    'ad-impression',
+    'ad-loaded',
+    'ad-finished',
+    'ad-start',
+    'ad-firstQuartile',
+    'ad-midpoint',
+    'ad-thirdQuartile',
+    'ad-allAdsCompleted',
+    'ad-pause',
+    'ad-click',
+    'ad-videoClicked',
+    'ad-adProgress',
+    'ad-durationChange',
+    'ad-skipped'
   ]
 }
