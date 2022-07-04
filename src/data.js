@@ -93,7 +93,7 @@ module.exports = {
     'admidpoint',
     'adthirdQuartile',
     'adallAdsCompleted',
-    'adpause'-ad-plyer,
+    'adpause',
     'adclick',
     'advideoClicked',
     'adadProgress',
