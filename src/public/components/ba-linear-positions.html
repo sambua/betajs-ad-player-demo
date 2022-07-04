@@ -35,17 +35,19 @@
         </div>
     </div>
 
-    <div ba-if="{{!!midRollCheck}}" class="form-group row">
-        <label for="midOptions" class="col-sm-2 col-form-label">Email</label>
-        <div class="col-sm-10">
-            <input type="text"
-                   class="form-control" id="midOptions"
-                   value="{{=midOptions}}"
-            >
-            <small id="passwordHelpInline" class="text-muted">
-                Values could be seconds as integer or, with percentage (example: 35%)
-                all comma separated
-            </small>
+    <div ba-if="{{!!midRollCheck}}" class="col-sm-12">
+        <div class="form-group row">
+            <label for="midOptions" class="col-sm-4 col-form-label">Mid Settings</label>
+            <div class="col-sm-8">
+                <input type="text"
+                       class="form-control" id="midOptions"
+                       value="{{=midOptions}}"
+                >
+                <small id="passwordHelpInline" class="text-muted">
+                    Values could be seconds as an integer or, with percentage (example: 35%).
+                    All comma separated
+                </small>
+            </div>
         </div>
     </div>
 </div>

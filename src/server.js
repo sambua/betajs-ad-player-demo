@@ -26,12 +26,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/public", express.static("src/public"));
 
-// io.engine.generateId = (req) => {
-//     return clientID; // must be unique across all Socket.IO servers
-// }
-
 io.on('connection', (socket) => {
-    socket.join(clientID);
     socket.on('disconnect', function () {
         console.log("SOCKET DISCONNECTED");
     });
@@ -41,10 +36,10 @@ app.use("/", routes(data, io, clientID));
 const dynWatcher = chokidar.watch(componentsFolder, {
     ignored: /\.html|all\.js|(^|[\/\\])\../
 });
+
 dynWatcher.on('change', (event, path) => {
     combineFiles(componentsFolder, onFileContent, onError);
 });
-
 
 server.listen(PORT, () => {
     console.log("server running at port: " + PORT);

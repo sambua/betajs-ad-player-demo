@@ -6,10 +6,10 @@ module.exports = {
   ],
   localExamples: [
     {value: null, label: "Please Select Local Example"},
-    {value: 'v3_non_linear', label: "VAST-3 Non Linear"},
     {value: 'v3_linear_skip_able', label: "VAST-3 Linear Skippable"},
     {value: 'v4_2_linear_skip_able', label: "VAST-4_2 Linear Skippable"},
     {value: 'v4_2_linear_non_skip-able', label: "VAST-4_2 Non Skippable"},
+    {value: 'v3_non_linear', label: "VAST-3 Non Linear"},
   ],
   doubleClickExamples : [
     {value: null, label: "Please Select Double Click example"},
@@ -83,5 +83,21 @@ module.exports = {
       label: "VAST v4.2 Skip able Inline",
       url: "VAST_4_2/Inline_Skipable.xml"
     }
+  ],
+  imaEvents: [
+    'adimpression',
+    'adloaded',
+    'adfinished',
+    'adstart',
+    'adfirstQuartile',
+    'admidpoint',
+    'adthirdQuartile',
+    'adallAdsCompleted',
+    'adpause'-ad-plyer,
+    'adclick',
+    'advideoClicked',
+    'adadProgress',
+    'addurationChange',
+    'adskipped'
   ]
 }

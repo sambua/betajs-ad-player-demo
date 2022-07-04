@@ -20,13 +20,14 @@ const playerDemoContainer = document.getElementById('player-demo-container');
 if (playerDemoContainer && window.__localData) {
 
     // We're getting and set data in the header
-    const { exampleTypeOptions } = window.__localData;
+    const { exampleTypeOptions, imaEvents } = window.__localData;
 
     const dynamic = new BetaJS.Dynamics.Dynamic({
         element: playerDemoContainer,
 
         attrs: {
             xmlView: null,
+            poster: null,
             playerVisible: false,
             text: "Some text",
             data: window.__localData,
@@ -37,7 +38,8 @@ if (playerDemoContainer && window.__localData) {
             adTagUrl: null,
             nonLinearAdTagUrl: null,
             linearSettings: '',
-            nonlinearSettings: null,
+            nonLinearSettings: null,
+            imaEvents,
         },
 
         collections: {
@@ -64,7 +66,7 @@ if (playerDemoContainer && window.__localData) {
                             } else {
                                 this.set("adTagUrl", location.protocol + '//' + location.host + url);
                                 this.set("xmlView", data);
-                                this._setNotification('New template was generated on URL: ' + url, 'success');
+                                // this._setNotification('New template was generated on URL: ' + url, 'success');
                             }
                         }).error((err) => {
                             this._setNotification('Error: ' + JSON.stringify(err), 'danger');
@@ -72,27 +74,20 @@ if (playerDemoContainer && window.__localData) {
                         break;
                     case 'doubleClickExamples':
                         this.set("adTagUrl", value);
-                        this._setNotification('Ads Tag URL: ' + value, "info");
+                        // this._setNotification('Ads Tag URL: ' + value, "info");
                         break;
                     default:
                         this._setNotification('Coming SOON :)', 'success', 3);
                         break;
                 }
-            },
-
-            // "change:linearSettings": function (value) {
-            //     this._adPlayer.set("linear", value);
-            // },
-            // "change:nonlinearSettings": function (value) {
-            //     this._adPlayer.set("non-linear", value);
-            // },
+            }
         },
 
         create: function () {
 
             this._clear_notification_by_id = (id) => {
                 this.get("notifications").iterate((_notification) => {
-                    if (_notification.get("id") == id) {
+                    if (_notification.get("id") === +id) {
                         this.get("notifications").remove(_notification);
                     }
                 }, this)
@@ -129,6 +124,14 @@ if (playerDemoContainer && window.__localData) {
             },
 
             show_ad_player: function () {
+
+                this.set("playerVisible", true);
+
+                const _ = this;
+                setTimeout(() => {
+                    _.set("poster", "/public/media/sample-cover.png");
+                }, 1000);
+
                 this._ima = new BetaJS.MediaComponents.Ads.IMAProvider({
                     adTagUrl: this.get("adTagUrl"),
                     nonLinearAdTagUrl: this.get("nonLinearAdTagUrl")
@@ -136,6 +139,7 @@ if (playerDemoContainer && window.__localData) {
                     // postAdTagUrl: 'https://localhost:5050/static/demos/vast-samples/VAST_3_0/Video_Clicks_and_click_tracking-Inline-test.xml',
                     // midAdTagUrl: 'https://localhost:5050/static/demos/vast-samples/VAST_3_0/Video_Clicks_and_click_tracking-Inline-test.xml',
                 });
+
                 this._ima.register("ima");
 
                 this._adPlayer = new BetaJS.MediaComponents.VideoPlayer.Dynamics.Player({
@@ -146,11 +150,10 @@ if (playerDemoContainer && window.__localData) {
                         theme: 'modern',
                         adprovider: 'ima',
                         linear: this.get("linearSettings"),
-                        'non-linear': this.get("nonlinearSettings")
+                        'non-linear': this.get("nonLinearSettings")
                     }
                 });
 
-                console.log("SHouds Acti", this.get("linearSettings"), this.get("adTagUrl"));
                 this._adPlayer.activate();
             },
 
@@ -190,7 +193,10 @@ if (playerDemoContainer && window.__localData) {
                     }
                     this.set("linearSettings", this.get("linearSettings") + str);
                 }, this);
+            },
 
+            non_linear_settings_changed: function (settings) {
+                this.set("nonLinearSettings", settings);
             },
 
             clear_notifications: function () {

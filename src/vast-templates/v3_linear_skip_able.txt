@@ -71,28 +71,28 @@
                         </VideoClicks>
                         <MediaFiles>
                             <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="450" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[ {{url}}/static/demos/assets/vast/video_mp4_1280x720_br-450.mp4 ]]>
+                                <![CDATA[ {{url}}/public/media/vast/video_mp4_1280x720_br-450.mp4 ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="176" height="144" type="video/3gpp" bitrate="36" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_3gpp_176x144_br-36.3gp ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_3gpp_176x144_br-36.3gp ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="320" height="180" type="video/3gpp" bitrate="69" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_3gpp_320x180_br-69.3gp ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_3gpp_320x180_br-69.3gp ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/mp4" bitrate="118" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_mp4_640x360_br-118.mp4 ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_mp4_640x360_br-118.mp4 ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="640" height="360" type="video/webm" bitrate="119" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_webm_640x360_br-119.webm ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_webm_640x360_br-119.webm ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/webm" bitrate="229" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_webm_1280x720_br-229.webm ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_webm_1280x720_br-229.webm ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="854" height="480" type="video/webm" bitrate="132" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_webm_854x480_br-132.webm ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_webm_854x480_br-132.webm ]]>
                             </MediaFile>
                             <MediaFile id="GDFP" delivery="progressive" width="1280" height="720" type="video/mp4" bitrate="241" scalable="true" maintainAspectRatio="true">
-                                <![CDATA[{{url}}/static/demos/assets/vast/video_mp4_1280x720_br-241.mp4 ]]>
+                                <![CDATA[{{url}}/public/media/vast/video_mp4_1280x720_br-241.mp4 ]]>
                             </MediaFile>
                         </MediaFiles>
                     </Linear>

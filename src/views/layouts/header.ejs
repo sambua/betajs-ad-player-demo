@@ -4,7 +4,9 @@
     <title><%= title %></title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous"
+    >
 
     <script src="//cdn.rawgit.com/betajs/betajs-shims/master/dist/betajs-shims.js"></script>
     <script src="//cdn.rawgit.com/betajs/betajs-scoped/master/dist/scoped.js"></script>
@@ -13,24 +15,22 @@
     <script src="//cdn.rawgit.com/betajs/betajs-media/master/dist/betajs-media-noscoped.js"></script>
     <script src="//cdn.rawgit.com/betajs/betajs-dynamics/master/dist/betajs-dynamics-noscoped.js"></script>
 
-    <script src="/public/libs/betajs-media-components/betajs-media-components-noscoped.js"></script>
-    <link  href="/public/libs/betajs-media-components/betajs-media-components.css" rel="stylesheet" />
+<!--    <script src="/public/libs/betajs-media-components/themes/modern/script.js"></script>-->
+<!--    <link  href="/public/libs/betajs-media-components/themes/modern/style.css" rel="stylesheet" />-->
 
-    <script src="/public/libs/betajs-media-components/themes/modern/script.js"></script>
-
-    <link  href="/public/libs/betajs-media-components/themes/modern/style.css" rel="stylesheet" />
-    <!--    <script src="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/betajs-media-components-noscoped.js"></script>-->
-    <!--    <link  href="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/betajs-media-components.css" rel="stylesheet" />-->
-    <!--    <script src="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/themes/modern/script.js"></script>-->
-    <!--    <link  href="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/themes/modern/style.css" rel="stylesheet" />-->
+<!--        <script src="https://localhost:5050/static/dist/betajs-media-components-noscoped.js"></script>-->
+        <script src="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/betajs-media-components-noscoped.js"></script>
+        <link  href="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/betajs-media-components.css" rel="stylesheet" />
+        <script src="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/themes/modern/script.js"></script>
+        <link  href="//cdn.rawgit.com/betajs/betajs-media-components/master/dist/themes/modern/style.css" rel="stylesheet" />
 
     <link rel="stylesheet" href='/public/assets/styles.css' />
 
     <script src="/public/libs/socket.io/client/socket.io.min.js"></script>
     <script>
         window.__localData = <%- JSON.stringify(data) %>;
-        window.__uniqueID = <%- JSON.stringify(id) || Date.now() %>;
+        window.__uniqueID = <%- JSON.stringify(id) || null %>;
     </script>
 </head>
 <body>
-<div class="container">
+<div class="container-fluid">

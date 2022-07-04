@@ -4,33 +4,22 @@ const express = require("express");
 // const findRemoveSync = require('find-remove');
 const { deleteOldFiles } = require("../utils/oldFiles");
 
-module.exports = (data, io, clinetID) => {
+module.exports = (data, io, clientID) => {
     const router = express.Router();
     const root = path.join(__dirname + "/../");
     const vastFolder = root + "/public/vast";
     const vastTemplatesFolder = root + "/vast-templates";
-    const id = io.socket;
 
     /* GET home page. */
     router.get("/", function(req, res, next) {
 
+        // io.socket.join(clientID);
 
         // Will delete all files, based a provided period; default is 36000 seconds
         deleteOldFiles(vastFolder);
 
-        // fs.readdir(vastFolder, (err, files) => {
-        //     if (err) throw err;
-        //
-        //     for (const file of files) {
-        //         console.log(file + ' : File Deleted Successfully.');
-        //         fs.unlinkSync(`${vastFolder}/${file}`);
-        //     }
-        // });
-
-        // findRemoveSync(vastFolder, { age: { seconds: 3600 }});
-
         res.render("index", {
-            id: clinetID,
+            id: clientID,
             data,
             title: "Beta JS Player Ad demo",
         });
@@ -78,7 +67,10 @@ module.exports = (data, io, clinetID) => {
 
     router.get("/ad/:type", function(req, res, next) {
         const {params: { type }} = req;
-        io.sockets.emit("tracking", { log: `Tracking type: ${type}. Endpoint: ${req.url}`});
+        // io.to(clientID).emit("tracking", ...
+        io.sockets.emit("tracking", {
+            log: `Tracking type: ${type}. Endpoint: ${req.url}`
+        });
         return res.sendStatus(200);
     });
 
