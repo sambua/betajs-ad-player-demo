@@ -53,24 +53,48 @@ if (playerDemoContainer && window.__localData) {
                 if (!value) return;
                 switch (this.get("selectRadioType")) {
                     case 'localExamples':
-                        BetaJS.Ajax.Support.execute({
-                            method: "POST",
-                            uri: '/vast-generator',
-                            data: {
+                        fetch('/vast-generator', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                                // 'Content-Type': 'application/x-www-form-urlencoded',
+                            },
+                            body: JSON.stringify({
                                 exampleName: value
-                            }
-                        }).success((resp) => {
-                            const { errors, data, url } = resp;
-                            if (errors.length > 0) {
-                                this._setNotification(errors.map(err => err.message)[0]);
-                            } else {
-                                this.set("adTagUrl", location.protocol + '//' + location.host + url);
-                                this.set("xmlView", data);
-                                // this._setNotification('New template was generated on URL: ' + url, 'success');
-                            }
-                        }).error((err) => {
-                            this._setNotification('Error: ' + JSON.stringify(err), 'danger');
-                        });
+                            })
+                        })
+                            .then(response => response.json())
+                            .then((resp) => {
+                                const { errors, data, url } = resp;
+                                console.log("REPSK, r", resp);
+                                if (errors.length > 0) {
+                                    this._setNotification(errors.map(err => err.message)[0]);
+                                } else {
+                                    this.set("adTagUrl", location.protocol + '//' + location.host + url);
+                                    this.set("xmlView", data);
+                                    // this._setNotification('New template was generated on URL: ' + url, 'success');
+                                }
+                            }).catch((err) => {
+                                this._setNotification(JSON.stringify(err));
+                            });
+                        // BetaJS.Ajax.Support.execute({
+                        //     method: "POST",
+                        //     uri: '/vast-generator',
+                        //     data: {
+                        //         exampleName: value
+                        //     }
+                        // }).success((resp) => {
+                        //     const { errors, data, url } = resp;
+                        //     if (errors.length > 0) {
+                        //         this._setNotification(errors.map(err => err.message)[0]);
+                        //     } else {
+                        //         this.set("adTagUrl", location.protocol + '//' + location.host + url);
+                        //         this.set("xmlView", data);
+                        //         // this._setNotification('New template was generated on URL: ' + url, 'success');
+                        //     }
+                        // }).error((err) => {
+                        //     this._setNotification('Error: ' + JSON.stringify(err), 'danger');
+                        // });
                         break;
                     case 'doubleClickExamples':
                         this.set("adTagUrl", value);

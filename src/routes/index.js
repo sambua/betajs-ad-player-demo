@@ -32,6 +32,7 @@ module.exports = (data, io, clientID) => {
     router.post("/vast-generator", function(req, res, next) {
 
         const { exampleName } = req.body;
+        console.log("- >> ", req.body);
         // const newName = 'vast-' + Date.now();
         const templateName = exampleName || 'v3_non_linear';
         fs.readFile(path.resolve(`${vastTemplatesFolder}/${templateName}.txt`), 'utf-8', function(err, data) {

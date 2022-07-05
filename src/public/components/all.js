@@ -1,4 +1,3 @@
-
 BetaJS.Dynamics.Dynamic.extend(null, {
     templateUrl: '/public/components/ba-linear-positions.html',
 
@@ -16,7 +15,6 @@ BetaJS.Dynamics.Dynamic.extend(null, {
 
     events: {
         "change:preRollCheck": function (value) {
-            console.log("PRE ", value);
             const allOptions = {...this.get('allOptions'), pre: value};
             this.set("allOptions", allOptions);
         },
@@ -97,4 +95,5 @@ BetaJS.Dynamics.Dynamic.extend(null, {
     }
 
 }).register("ba-radio-example-type");
+
 

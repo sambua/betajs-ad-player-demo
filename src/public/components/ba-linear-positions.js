@@ -15,7 +15,6 @@ BetaJS.Dynamics.Dynamic.extend(null, {
 
     events: {
         "change:preRollCheck": function (value) {
-            console.log("PRE ", value);
             const allOptions = {...this.get('allOptions'), pre: value};
             this.set("allOptions", allOptions);
         },

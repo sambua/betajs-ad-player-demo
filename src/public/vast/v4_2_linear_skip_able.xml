@@ -13,23 +13,23 @@
         <Creative id="5480" sequence="1" adId="2447226">
           <Linear skipoffset="00:00:05">
             <TrackingEvents>
-              <Tracking event="start" ><![CDATA[{{url}}/ad/start]]></Tracking>
-              <Tracking event="progress" offset="00:00:10"><![CDATA[{{url}}/ad/progress-10]]></Tracking>
-              <Tracking event="firstQuartile"><![CDATA[{{url}}/ad/firstQuartile]]></Tracking>
-              <Tracking event="midpoint"><![CDATA[{{url}}/ad/midpoint]]></Tracking>
-              <Tracking event="thirdQuartile"><![CDATA[{{url}}/ad/thirdQuartile]]></Tracking>
-              <Tracking event="complete"><![CDATA[{{url}}/ad/complete]]></Tracking>
+              <Tracking event="start" ><![CDATA[//localhost:8003/ad/start]]></Tracking>
+              <Tracking event="progress" offset="00:00:10"><![CDATA[//localhost:8003/ad/progress-10]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[//localhost:8003/ad/firstQuartile]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[//localhost:8003/ad/midpoint]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[//localhost:8003/ad/thirdQuartile]]></Tracking>
+              <Tracking event="complete"><![CDATA[//localhost:8003/ad/complete]]></Tracking>
             </TrackingEvents>
             <Duration>00:00:16</Duration>
             <MediaFiles>
               <MediaFile id="5241" delivery="progressive" type="video/mp4" bitrate="450" width="1280" height="720" minBitrate="1500" maxBitrate="2500" scalable="1" maintainAspectRatio="1" codec="H.264">
-                <![CDATA[{{url}}/public/media/vast/video_mp4_1280x720_br-450.mp4]]>
+                <![CDATA[//localhost:8003/public/media/vast/video_mp4_1280x720_br-450.mp4]]>
               </MediaFile>
               <MediaFile id="5244" delivery="progressive" type="video/mp4" bitrate="241" width="854" height="480" minBitrate="700" maxBitrate="1500" scalable="1" maintainAspectRatio="1" codec="H.264">
-                <![CDATA[{{url}}/public/media/vast/video_mp4_1280x720_br-241.mp4]]>
+                <![CDATA[//localhost:8003/public/media/vast/video_mp4_1280x720_br-241.mp4]]>
               </MediaFile>
               <MediaFile id="5246" delivery="progressive" type="video/mp4" bitrate="118" width="640" height="360" minBitrate="500" maxBitrate="700" scalable="1" maintainAspectRatio="1" codec="H.264">
-                <![CDATA[{{url}}/public/media/vast/video_mp4_640x360_br-118.mp4]]>
+                <![CDATA[//localhost:8003/public/media/vast/video_mp4_640x360_br-118.mp4]]>
               </MediaFile>
             </MediaFiles>
             <VideoClicks>
